@@ -59,6 +59,24 @@ nav {
 }
 .enlaces-header {
     font-weight: 400;
+    margin-right: 20px;
+    transition: ease-in-out .5s;
+}
+@media screen and (max-width: 550px) {
+    .enlaces-header {
+        position: fixed;
+        background-color: #1fde82;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+        clip-path: circle(0.4% at 100% 0);
+    }
 }
 .nav .enlaces-header a {
     color: #5d6678;
@@ -69,15 +87,20 @@ nav {
     width: 80px;
     height:  80px;
     display: none;
-    background-color: green;
     text-align: center;
     z-index: 100;
     cursor: pointer;
-    /* transition: color .5s ease-in; */
-}
-.hamburger {
     font-size:  25px;
     line-height: 80px;
+    /* transition: color .5s ease-in; */
+}
+@media screen and (max-width: 550px) {
+    .hamburger {
+        display: block;
+    }
+}
+.menudos {
+    clip-path: circle(141.2% at 100% 0);
 }
 .contenido-header {
     width: 100%;
@@ -86,9 +109,38 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
+@media screen and (max-width: 1000px){
+    .contenido-header {
+        flex-direction: column;
+        margin-top: 150px;
+    }
+}
+@media screen and (max-width: 650px){
+    .contenido-header {
+        height: auto;
+    }
+    .contenido-header h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+    .contenido-header p {
+        text-align: justify;
+    }
+}
 .contenido-header>img {
     width: 550px;
     animation: ease-in-out animat 1s;
+}
+@media screen and (max-width: 650px){
+    .contenido-header>img {
+        width: 400px;
+        margin-top: 50px;
+    }
+}
+@media screen and (max-width: 420px){
+    .contenido-header>img {
+        width: 280px;
+    }
 }
 @keyframes animat {
     0% {
@@ -126,6 +178,12 @@ nav {
 .titulo{
     font-size: 50px;
 }
+@media screen and (max-width: 650px){
+    .titulo {
+        font-size: 30px;
+        text-align: center;
+    }
+}
 .contenedor-articulo {
     display: flex;
     flex-wrap: wrap;
@@ -141,6 +199,16 @@ nav {
     box-shadow: 0 4px 10px rgba(17, 29, 48, .26);
     transform: scale(1);
     transition: .5s;
+}
+@media screen and (max-width: 950px){
+    .articulo {
+        width: 45%;
+    }
+}
+@media screen and (max-width: 650px){
+    .articulo {
+        width: 100%;
+    }
 }
 .articulo:hover {
     transform: scale(.95);
@@ -177,15 +245,39 @@ nav {
 /*  Question */
 
 .questions {
-    width: 100%;
     height: 600px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+@media screen and (max-width: 1000px){
+    .questions {
+        flex-direction: column-reverse;
+        margin-bottom: 30px;
+    }
+}
+@media screen and (max-width: 650px){
+    .questions {
+        height: auto;
+    }
+    .questions p {
+        text-align: justify;
+    }
+}
 .questions>img {
     width: 550px;
     animation: ease-in-out animat 1s;
+}
+@media screen and (max-width: 650px){
+    .questions>img {
+        width: 400px;
+        margin-bottom: 40px;
+    }
+}
+@media screen and (max-width: 420px){
+    .questions>img {
+        width: 280px;
+    }
 }
 @keyframes animat {
     0% {
@@ -200,6 +292,12 @@ nav {
 }
 .textos-questions h2 {
     font-size: 40px;
+}
+@media screen and (max-width: 650px){
+    .textos-questions h2 {
+        font-size: 25px;
+        text-align: center;
+    }
 }
 .questions p {
     font-weight: 400;
@@ -231,19 +329,34 @@ nav {
     display: flex;
     justify-content: space-evenly;
 }
+@media screen and (max-width: 1087px){
+    .content-results {
+        flex-direction: column-reverse;
+    }
+}
 .numbers {
     width: 60%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-.numbers .number {
+@media screen and (max-width: 1087px){
+    .numbers {
+        width: 100%;
+    }
+}
+.number {
     width: 45%;
     background-color: rgba(255,255,255, .2);
     color: #fff;
     border-radius: 10px;
     padding: 40px 35px;
     margin-bottom: 20px;
+}
+@media screen and (max-width: 650px){
+    .number {
+        width: 100%;
+    }
 }
 .numbers  h4 {
     color:  #fff;
@@ -257,14 +370,33 @@ nav {
 .results-text {
     width: 37%;
 }
+@media screen and (max-width: 1087px){
+    .results-text {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+}
 .results-text h4 {
     color: #fff;
     font-size: 40px;
+}
+@media screen and (max-width: 1087px){
+    .results-text h4 {
+        font-size: 30px;
+    }
 }
 .results-text p {
     color: #fff;
     font-weight: 300;
     margin: 20px 0;
+}
+@media screen and (max-width: 1087px){
+    .results-text p {
+        text-align: justify;
+    }
 }
 .results-text>a {
     color: #fff;
@@ -283,11 +415,44 @@ nav {
     display: flex;
     justify-content: space-between;
 }
+@media screen and (max-width: 1050px){
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 .services>img {
     width: 500px;
 }
+@media screen and (max-width: 1050px){
+    .services>img {
+        align-self: flex-start;
+    }
+}
+@media screen and (max-width: 650px){
+    .services>img {
+        width: 350px;
+        align-self: center;
+    }
+}
+@media screen and (max-width: 420px){
+    .services>img {
+        width: 280px;
+    }
+}
 .box-skills {
     margin: 30px 30px 0 0;
+}
+@media screen and (max-width: 1050px){
+    .box-skills {
+        align-self: flex-end;
+    }
+}
+@media screen and (max-width: 650px){
+    .box-skills {
+        align-self: center;
+        margin: 20px 0 0 0;
+    }
 }
 .box-skills h4 {
     font-size: 24px;
@@ -296,6 +461,11 @@ nav {
     border-radius: 6px;
     padding: 10px 0 10px 15px;
     margin-bottom: 10px;
+}
+@media screen and (max-width: 420px){
+    .box-skills h4{
+        width: 280px;
+    }
 }
 .box-skills i {
     color: #1fde82;
@@ -314,9 +484,20 @@ footer {
     justify-content: space-evenly;
     margin: auto;
 }
+@media screen and (max-width: 650px){
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 .partFooter {
     width: 20%;
     text-align: center;
+}
+@media screen and (max-width: 650px){
+    .partFooter  {
+        width: 100%;
+    }
 }
 .partFooter h4 {
     color: #1d273b;
